@@ -1,2 +1,2 @@
 # proyectoAngular
-practicando github con angular
+practicando github con angular desde 0
