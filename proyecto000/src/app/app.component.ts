@@ -64,4 +64,14 @@ export class AppComponent {
   decremento() {
     this.contador--;
   }
+  // property binding
+
+  nombre_2 = '';
+
+  mostrarNombre() {
+    this.nombre_2 = 'Juan';
+  }
+  mostrarNombre2() {
+    this.nombre_2 = 'Carlos'
+  }
 }
