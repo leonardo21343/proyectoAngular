@@ -14,6 +14,30 @@ export class AppComponent {
   sueldos = [1700, 1600, 1900];
   activo = true;
 
+  //parte de templates @for @if @switch @case
+  articulos = [
+    {
+      id: 1,
+      nombre: 'lavadora',
+      precio: 500
+    },
+    {
+      id: 2,
+      nombre: 'licuadora',
+      precio: 100
+    },
+    {
+      id: 3,
+      nombre: 'mesa',
+      precio: 150
+    }
+  ]
+
+  generarNumero() {
+    return (Math.floor(Math.random()*3)+1);
+  }
+
+  //parte de interpolacion
   esActivo() {
     if (this.activo === true) {
       return "Trabajador Activo";
@@ -28,5 +52,16 @@ export class AppComponent {
       suma += this.sueldos[i];
     }
     return suma;
+  }
+
+  //parte de eventos
+
+  contador = 1;
+
+  incremento() {
+    this.contador++;
+  }
+  decremento() {
+    this.contador--;
   }
 }

@@ -1,7 +1,50 @@
+<!--------------------------------->
+<h1>Interpolación</h1>
 <div>
   <p>Nombre del empleado: {{nombre}}</p>
   <p>edad: {{edad}}</p>
   <p>Los ultimos 3 sueldos son: {{sueldos[0]}}, {{sueldos[1]}}, {{sueldos[2]}}</p>
   <p>En los ultimos 3 meses han ganado {{mostrasSueldo()}}</p>
   <p>{{esActivo()}}</p>
+</div>
+<hr>
+<!--------------------------------->
+<h1>Sintaxis de templates</h1>
+<div>
+  <h2>Datos</h2>
+  <p>Nombre del empleado: {{nombre}}</p>
+  <p>Edad: {{edad}}</p>
+  @if (edad > 18) {
+    <p>Es mayor de edad</p>
+  } @else {
+    <p>Es menor de edad</p>
+  }
+  <h2>Lista de articulos</h2>
+  @for (item of articulos; track item.id) {
+    <tr>
+      <td> {{item.id}} </td>
+      <td> {{item.nombre}} </td>
+      <td> {{item.precio}} </td>
+    </tr>
+  }
+  <h2>Numero aleatorio</h2>
+  @switch (generarNumero()) {
+    @case (1) {
+      <p> 1 </p>
+    }
+    @case (2) {
+      <p> 2 </p>
+    }
+    @case (3) {
+      <p> 3 </p>
+    }
+  }
+
+</div>
+<!--------------------------------->
+<h2>Eventos</h2>
+<div>
+  <p> {{contador}} </p>
+  <button (click)="incremento()">Incrementar 1</button>
+  <button (click)="decremento()">Decrementar 1</button>
 </div>
