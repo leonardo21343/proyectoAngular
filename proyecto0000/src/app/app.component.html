@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+  
+    @if (100 > 500) {
+      <p style="color: blue; font-size: 40px;">Catálogo de productos</p>
+    } @else {
+      <p style="color: red; font-size: 40px;">Catálogo de productos</p>
+    }
+
+  </div>
+  <div>
+    <ul>
+      @for (item of catalogo; track item) {
+        <li> {{item}} </li>
+      }
+    </ul>
+  </div>
+  <hr>
+  <div>
+    @switch (dia) {
+      @case (1) {
+        <p>Lunes</p>
+      }
+      @case (2) {
+        <p>Martes</p>
+      }
+      @case (3) {
+        <p>Miercoles</p>
+      }
+      @case (4) {
+        <p>Jueves</p>
+      }
+      @case (5) {
+        <p>Viernes</p>
+      }
+      @case (6) {
+        <p>Sabado</p>
+      }
+      @case (7) {
+        <p>Domingo</p>
+      }
+    }
+  </div>
+  <hr>
+  <div>
+
+    @for (item of datos; track datos) {
+      <p>Dato: {{item.id}} </p>
+      <p>Nombre: {{item.nombre}} <br> Apellido: {{item.apellido}} <br> Edad: {{item.edad}} </p> <br><br>
+    }
+  </div>
+  <hr>
+  <div>
+    <p> {{contador}} </p>
+    <button (click)="inc()">Incrementar</button>
+    <button (click)="dec()">Decrementar</button>
+  </div>
+
+  <hr>
+  <button (click)="src=''">imagen 1</button>
+  <button (click)="src=''">imagen 2</button>
+  <button (click)="src=''">imagen 3</button>
+  <br>
+  <img [src]="src" alt="">
+
+  <hr>
+  <div>
+    <app-ar></app-ar><br><br>
+    <app-ar></app-ar><br><br>
+    <app-ar></app-ar><br><br>
+    <app-ar></app-ar>
+  </div>
+
+  <hr>
+
+  <div>
+    <app-ar valor="{{valor1}}"></app-ar>
+    <app-ar valor="{{valor2}}"></app-ar>
+    <app-ar valor="{{valor3}}"></app-ar>
+    <button (click)="tirar()">Tirar</button>
+    <p>{{resultado}}</p>
+  </div>
+</body>
+</html>
